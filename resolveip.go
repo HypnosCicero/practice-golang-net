@@ -12,7 +12,7 @@ func main() {
 		log.Fatalln("Usage: %s hostname\n", os.Args[0])
 	}
 	name := os.Args[1]
-	addr, err := net.ResolveIPAddr("ip6", name)
+	addr, err := net.ResolveIPAddr("ip", name)
 	if err != nil {
 		log.Fatalln("Resolution error", err.Error())
 	}
