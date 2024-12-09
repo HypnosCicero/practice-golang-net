@@ -4,7 +4,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net"
 	"os"
@@ -21,7 +21,8 @@ func main() {
 	checkError(err)
 	_, err = conn.Write([]byte("HEAD / HTTP/1.0\r\n\r\n"))
 	checkError(err)
-	result, err := ioutil.ReadAll(conn)
+	//result, err := ioutil.ReadAll(conn)
+	result, err := io.ReadAll(conn)
 	fmt.Println(string(result))
 }
 
